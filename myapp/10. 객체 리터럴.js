@@ -97,9 +97,60 @@ var obj = {
 console.log(obj); // {x: 1, y: 2}
 
 // ES6
-let x = 1, y = 2;
+let x1 = 1, y1 = 2;
 
 // 프로퍼티 축약 표현
-const obj = { x, y };
+const obj1 = { x1, y1 };
+console.log("==============================")
+console.log(obj1); // {x: 1, y: 2}
 
-console.log(obj); // {x: 1, y: 2}
+var person = {
+    name: 'Lee'
+}
+
+person.age = 20;
+
+console.log(person);
+
+delete person.age;
+delete person.address;
+
+console.log(person);
+
+
+console.log("==============================")
+var prefix = 'prop';
+var i =0;
+var obj = {};
+
+obj[prefix + '-' + ++i] = i;
+obj[prefix + '-' + ++i] = i;
+obj[prefix + '-' + ++i] = i;
+
+console.log(obj);
+
+let i1 = 0;
+const obj2 = {
+    [`${prefix}-${++i1}`]: i1,
+    [`${prefix}-${++i1}`]: i1,
+    [`${prefix}-${++i1}`]: i1
+}
+console.log(obj2)
+
+console.log("========= 메서드 축약 ========")
+var obj3 = {
+    name: 'Lee',
+    sayHi: function() {
+        console.log('Hi!' + this.name);
+    }
+};
+
+obj3.sayHi();
+
+const obj4 = {
+    name: 'Lee',
+    sayHi() {
+        console.log('Hi!' + this.name);
+    }
+};
+obj4.sayHi();
